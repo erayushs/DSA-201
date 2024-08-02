@@ -1,3 +1,5 @@
+//NEXT GREATER ELEMENT
+
 let arr = [1, 3, 2, 4]; // Ans = 3, 4, 4, -1
 
 let n = arr.length;
