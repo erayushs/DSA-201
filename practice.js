@@ -24,22 +24,46 @@ for (let i = 0; i < n; i++) {
 console.log(result);
 */
 
-let arr = [1, 3, 2, 4];
+// let arr = [1, 3, 2, 4];
 
-let n = arr.length;
+// let n = arr.length;
 
-let result = new Array(n).fill(-1);
-let stack = [];
+// let result = new Array(n).fill(-1);
+// let stack = [];
 
-stack.push(arr[0]);
+// stack.push(arr[0]);
 
-for (let i = 1; i < n; i++) {
-  if (stack[stack.length - 1] < arr[i]) {
-    result.shift();
-    result.push(arr[i]);
-    stack.pop();
-    stack.push(arr[i]);
-  }
+// for (let i = 1; i < n; i++) {
+//   if (stack[stack.length - 1] < arr[i]) {
+//     result.shift();
+//     result.push(arr[i]);
+//     stack.pop();
+//     stack.push(arr[i]);
+//   }
+// }
+
+// console.log(result);
+
+// let s = "abbaca";
+// let stack = [];
+
+// for (let i = 0; i < s.length; i++) {
+//   if (stack[stack.length - 1] == s[i]) {
+//     stack.pop();
+//   } else {
+//     stack.push(s[i]);
+//   }
+// }
+
+// console.log(stack);
+
+let map = new Map();
+
+map.set("ayush", 1);
+map.set("rohit", 13);
+map.set("astha", 14);
+map.set("zeeshan", 2);
+
+for (let [key, count] of map.entries()) {
+  console.log(key, count);
 }
-
-console.log(result);
