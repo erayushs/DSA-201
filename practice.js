@@ -57,13 +57,24 @@ console.log(result);
 
 // console.log(stack);
 
-let map = new Map();
+// let map = new Map();
 
-map.set("ayush", 1);
-map.set("rohit", 13);
-map.set("astha", 14);
-map.set("zeeshan", 2);
+// map.set("ayush", 1);
+// map.set("rohit", 13);
+// map.set("astha", 14);
+// map.set("zeeshan", 2);
 
-for (let [key, count] of map.entries()) {
-  console.log(key, count);
+// for (let [key, count] of map.entries()) {
+//   console.log(key, count);
+// }
+
+let stack = [];
+
+let n = stack.length;
+
+n = undefined;
+console.log(n);
+
+if (stack.length === 0) {
+  console.log(`Length is ${n} and 0 also🤣`);
 }
