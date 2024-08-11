@@ -69,3 +69,46 @@ myList.addFirst(30);
 myList.addFirst(40);
 myList.addFirst(50);
 myList.addLast(60);
+
+let current = myList.head;
+let prev = null;
+
+while (current) {
+  let nextNode = current.next;
+  current.next = prev;
+  prev = current;
+
+  current = nextNode;
+}
+
+myList.print(prev);
+
+/* 
+
+MAKE MIDDLE ELEMENT HEAD OF THE LINKED LIST
+
+if(head === null) return null;
+
+if(head.next === null) return head;
+
+let fast = head;
+let slow = head;
+let prev = null;
+
+while(fast && fast.next){
+    prev = slow;
+    slow = slow.next;
+    fast = fast.next.next;
+}
+
+prev.next = slow.next;
+slow.next = head;
+head = slow;
+
+
+return head;
+    
+      
+      
+      
+*/
