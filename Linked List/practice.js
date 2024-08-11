@@ -1,16 +1,51 @@
-class Car {
-  constructor(name, color) {
-    this.name = name;
-    this.color = color;
-  }
+// class Car {
+//   constructor(name, color) {
+//     this.name = name;
+//     this.color = color;
+//   }
 
-  appearance() {
-    console.log(`Your car is ${this.name} and is of color ${this.color}`);
+//   appearance() {
+//     console.log(`Your car is ${this.name} and is of color ${this.color}`);
+//   }
+// }
+
+// let car = new Car("Volkswagen", "red");
+
+// // car.appearance();
+
+// console.log(car);
+
+class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
   }
 }
 
-let car = new Car("Volkswagen", "red");
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
 
-// car.appearance();
+  addFirst(data) {
+    const newNode = new Node(data);
+    newNode.next = this.head;
+    this.head = newNode;
+  }
 
-console.log(car);
+  addLast(data) {
+    const newNode = new Node(data);
+
+    if (!this.head) {
+      this.head = newNode;
+      return;
+    }
+
+    let current = this.head;
+    while (current.next) {
+      current = current.next;
+    }
+
+    current.next = newNode;
+  }
+}
