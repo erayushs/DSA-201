@@ -49,3 +49,9 @@ class LinkedList {
     current.next = newNode;
   }
 }
+
+let obj = {};
+
+obj.flag = true;
+
+console.log(obj);
