@@ -50,8 +50,88 @@ class LinkedList {
   }
 }
 
-let obj = {};
+// REVERSE CONTIGUOUS EVEN NUMBERS
 
-obj.flag = true;
+class ListNode {
+  constructor(val = 0, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
 
-console.log(obj);
+function reverseEvenSublists(head) {
+  let dummyNode = new ListNode(0);
+  dummyNode.next = head;
+  let curr = head;
+
+  while (curr) {
+    if (curr.val % 2 == 0) {
+      start = curr;
+      let stack = [];
+
+      while (curr && curr.val % 2 == 0) {
+        stack.push(curr.val);
+        curr = curr.next;
+      }
+
+      while (start && stack.length > 0) {
+        start.val = stack.pop();
+        start = start.next;
+      }
+    } else {
+      curr = curr.next;
+    }
+  }
+
+  return dummyNode.next;
+
+  // if (head == null || head.next == null) return head;
+  // let dummyNode = new ListNode(0);
+  // dummyNode.next = head;
+  // let curr = head;
+  // while (curr) {
+  //   if (curr.val % 2 === 0) {
+  //     let stack = [];
+  //     let start = curr;
+  //     while (curr && curr.val % 2 == 0) {
+  //       stack.push(curr.val);
+  //       curr = curr.next;
+  //     }
+  //     while (start && stack.length > 0) {
+  //       start.val = stack.pop();
+  //       start = start.next;
+  //     }
+  //   } else {
+  //     curr = curr.next;
+  //   }
+  // }
+  // return dummyNode.next;
+}
+
+// Helper function to print the list
+function printList(head) {
+  let curr = head;
+  while (curr) {
+    process.stdout.write(curr.val + " ");
+    curr = curr.next;
+  }
+  console.log();
+}
+
+// Example usage
+let head = new ListNode(1);
+head.next = new ListNode(2);
+head.next.next = new ListNode(3);
+head.next.next.next = new ListNode(3);
+head.next.next.next.next = new ListNode(4);
+head.next.next.next.next.next = new ListNode(6);
+head.next.next.next.next.next.next = new ListNode(8);
+head.next.next.next.next.next.next.next = new ListNode(5);
+
+console.log("Original list:");
+printList(head);
+
+head = reverseEvenSublists(head);
+
+console.log("Modified list:");
+printList(head);
