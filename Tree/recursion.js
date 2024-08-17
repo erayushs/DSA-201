@@ -9,12 +9,16 @@
 
 console.log(factorial(5)); */
 
-function range(a, b) {
-  if (a > b) return [];
+// function range(a, b) {
+//   if (a > b) {
+//     return [];
+//   }
 
-  let number = range(a, b - 1);
-  number.push(b);
-  return number;
-}
+//   let nums = range(a, b - 1);
+//   nums.push(b);
+//   return nums;
+// }
 
-console.log(range(1, 5));
+// console.log(range(0, 9));
+
+let str = "olleH";
